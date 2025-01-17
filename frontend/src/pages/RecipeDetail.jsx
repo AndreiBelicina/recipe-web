@@ -21,34 +21,33 @@ export default function RecipeDetail() {
 
     return (
         <div className='bg-recipe-detail'>
-        <div className="recipe-detail-container">
-            {Object.keys(recipeData).length === 0 ? (
-                <p>Loading recipe details...</p>
-            ) : (
-                <>
-                    <h1>{recipeData.title}</h1>
-                    <img
-                        src={`http://localhost:4000/images/${recipeData.coverImage}`}
-                        alt={recipeData.title}
-                        className="recipe-image"
-                    />
-                    <p><strong>Cooking Time:</strong> {recipeData.time}</p>
-                    <p><strong>Ingredients:</strong></p>
-                    <ul>
-                        {recipeData.ingredients?.map((ingredient, index) => (
-                            <li key={index}>
-                                <label>
-                                    {ingredient}
-                                </label>
-                            </li>
-                        ))}
-                    </ul>
-                    <p><strong>Instructions:</strong></p>
-                    <p>{recipeData.instruction}</p>
-                </>
-            )}
+            <div className="recipe-detail-container">
+                {Object.keys(recipeData).length === 0 ? (
+                    <p>Loading recipe details...</p>
+                ) : (
+                    <>
+                        <h1>{recipeData.title}</h1>
+                        <img
+                            src={`http://localhost:4000/images/${recipeData.coverImage}`}
+                            alt={recipeData.title}
+                            className="recipe-image"
+                        />
+                        <p><strong>Cooking Time:</strong> {recipeData.time}</p>
+                        <p><strong>Ingredients:</strong></p>
+                        <ul>
+                            {recipeData.ingredients?.map((ingredient, index) => (
+                                <li key={index}>
+                                    <label>
+                                        {ingredient}
+                                    </label>
+                                </li>
+                            ))}
+                        </ul>
+                        <p><strong>Instructions:</strong></p>
+                        <p>{recipeData.instruction}</p>
+                    </>
+                )}
+            </div>
         </div>
-        </div>
-
     );
 }
