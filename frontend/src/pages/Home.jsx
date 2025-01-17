@@ -24,8 +24,27 @@ const addRecipe =()=> {
         <>
          <section className='home'>
                 <div className='left'>
-                    <h1>Food Recipe</h1>
-                    <h5>SOME SHITS</h5>
+                    <h1><span className='taste'>Taste</span><span className='buds'>Buds</span></h1>
+                    <h5> <span> Welcome to TasteBuds </span> – Where Your Culinary Creations Come to Life!
+                    <br /><br />
+
+At TasteBuds, we believe everyone has a recipe worth sharing. Our platform lets you easily create and share your own recipes, as well as explore a growing collection of mouthwatering dishes submitted by other food enthusiasts. Whether you're looking for inspiration or want to contribute your own unique recipe, you'll find a vibrant community here to help you cook, discover, and connect.   
+<br />
+<br />
+
+What We Offer:
+<li>Share Your Recipes: Post your favorite dishes and recipes for others to try, complete with ingredients, instructions, and images.</li>
+
+<li>Browse & Discover: Explore a wide variety of recipes created by fellow users and find your next favorite meal.</li>
+
+<li>Favorites: Save the recipes you love with a simple click, and keep them in your personal favorites list for easy access.</li>
+
+<li>Delete & Manage: Update or remove any recipes you've shared with ease, keeping your collection fresh and relevant.</li>
+<br />
+<br />
+Join our community, showcase your culinary talent, and let the world of flavors inspire you.
+
+Start sharing and discovering today at TasteBuds </h5>
                     <button onClick={addRecipe}>Share your recipe</button>
                 </div>
                 <div className='right'>

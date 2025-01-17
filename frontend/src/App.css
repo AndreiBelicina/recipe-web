@@ -7,6 +7,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+span{
+  font-size: 20px;
+}
+
 header {
   width: 100vw;
   display: flex;
@@ -85,11 +89,13 @@ section{
 
 .home .left h5{
   margin:2rem 0;
+  
 }
 
 .bg svg{
   position: absolute;
   bottom: 0;
+  z-index: -100;
 }
 
 .card-container{
@@ -297,4 +303,77 @@ section{
   height: 120px;
   object-fit: cover;
   border-radius: 10px;
+}
+
+.bg-recipe-detail{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recipe-detail-container {
+  position: fixed;
+  top: 50px;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.recipe-detail-container h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.recipe-detail-container h1{
+  text-align: center;
+}
+
+.recipe-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  min-height: 300px;
+}
+
+.recipe-detail-container p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.recipe-detail-container ul {
+  list-style: disc;
+  margin: 10px 0 20px 20px;
+}
+
+.recipe-detail-container ul li {
+  font-size: 16px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul p {
+  font-size: 16px;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+ul p input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+ul p label {
+  font-size: 16px;
+  cursor: pointer;
 }

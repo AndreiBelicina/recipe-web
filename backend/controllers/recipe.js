@@ -51,10 +51,11 @@ const addRecipe = async (request, response) => {
 
 const editRecipe = async (request, response) => {
     const { title, ingredients, instruction, time } = request.body;
-    const recipe = await Recipes.findById(request.params.id);
+    const recipe = await Recipes.findById(request.params.id)
     try {
         if (recipe) {
-            await Recipes.findByIdAndUpdate(request.params.id, request.body, { new: true });
+            let coverImage= request.file?.filename ? request.file?.filename : recipe.coverImage
+            await Recipes.findByIdAndUpdate(request.params.id, {...request.body,coverImage}, { new: true });
             return response.json({ title, ingredients, instruction, time });
         } else {
             return response.status(404).json({ message: "Recipe not found" });
@@ -65,8 +66,14 @@ const editRecipe = async (request, response) => {
     }
 };
 
-const deleteRecipe = (request, response) => {
-    response.json({ mssg: "Welcome to this shit" });
+const deleteRecipe = async (request, response) => {
+    try {
+        await Recipes.deleteOne({_id: request.params.id})
+        response.json({status:"ok"})
+    }
+    catch (err){
+        return response.status(400).json({message:"error"})
+    }
 };
 
 module.exports = { getRecipes, getRecipe, addRecipe, editRecipe, deleteRecipe, upload };
