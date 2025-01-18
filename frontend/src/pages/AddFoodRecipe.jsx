@@ -3,30 +3,31 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function AddFoodRecipe() {
-    const [recipeData, setRecipeData] = useState({});
+    const [recipeData, setRecipeData] = useState({ ingredients: [], instruction: [] });
     const navigate = useNavigate();
 
     const onHandleChange = (e) => {
         let val;
         if (e.target.name === "ingredients") {
-            // Split the input string by commas, trim each item, and store as an array of values
             val = e.target.value.split(",").map(item => item.trim());
+        } else if (e.target.name === "instruction") {
+            val = e.target.value.split("\n").map(item => item.trim());
         } else if (e.target.name === "file") {
             val = e.target.files[0];
         } else {
             val = e.target.value;
         }
-        setRecipeData((prev) => ({ ...prev, [e.target.name]: val }));
+        setRecipeData(prev => ({ ...prev, [e.target.name]: val }));
     };
 
     const onHandleSubmit = async (e) => {
         e.preventDefault();
-        console.log(recipeData); // Log the recipe data to ensure it's correct
+        console.log(recipeData);
 
         const formData = new FormData();
         for (const key in recipeData) {
             if (Array.isArray(recipeData[key])) {
-                // For ingredients, we can loop through and append each value separately if needed
+                // Append array items separately
                 recipeData[key].forEach((item, index) => {
                     formData.append(`${key}[${index}]`, item);
                 });
@@ -42,7 +43,7 @@ export default function AddFoodRecipe() {
                     'authorization': 'Bearer ' + localStorage.getItem("token"),
                 },
             });
-            console.log(response.data); // Log the response from the backend
+            console.log(response.data);
             navigate("/");
         } catch (error) {
             console.error("There was an error!", error);
@@ -62,18 +63,27 @@ export default function AddFoodRecipe() {
                 </div>
                 <div className='form-control'>
                     <label>Ingredients</label>
-                    <textarea 
-                        className='input-textarea' 
-                        name="ingredients" 
-                        rows="5" 
-                        onChange={onHandleChange} 
-                        value={recipeData.ingredients?.join(", ")} 
-                        required 
+                    <textarea
+                        className='input-textarea'
+                        name="ingredients"
+                        rows="3"
+                        onChange={onHandleChange}
+                        value={recipeData.ingredients?.join(", ")}
+                        placeholder="Enter ingredients separated by commas"
+                        required
                     />
                 </div>
                 <div className='form-control'>
                     <label>Instructions</label>
-                    <textarea className='input-textarea' name="instruction" rows="5" onChange={onHandleChange} required></textarea>
+                    <textarea
+                        className='input-textarea'
+                        name="instruction"
+                        rows="5"
+                        onChange={onHandleChange}
+                        value={recipeData.instruction?.join("\n")}
+                        placeholder="Enter each instruction on a new line"
+                        required
+                    />
                 </div>
                 <div className='form-control'>
                     <label>Recipe Image</label>

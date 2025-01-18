@@ -44,7 +44,11 @@ export default function RecipeDetail() {
                             ))}
                         </ul>
                         <p><strong>Instructions:</strong></p>
-                        <p>{recipeData.instruction}</p>
+                        <ol style={{ marginLeft: '20px' }} >
+                            {recipeData.instruction?.map((instruction, index) => (
+                                <li key={index}>{instruction}</li>
+                            ))}
+                        </ol>
                     </>
                 )}
             </div>

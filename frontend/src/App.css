@@ -1,5 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:link{
+  text-decoration: none;
+}
+
+.homeNav{
+  text-decoration: none;
+  font-family: "PT Serif";
+  font-weight: 510;
+  font-size: 17px;
+  color:#333333;
+}
+
+.recipeNav{
+  text-decoration: none;
+  font-family: "PT Serif";
+  font-weight: 510;
+  font-style: normal;
+  font-size: 17px;
+  color:#333333;
+}
+
+.favNav{
+  text-decoration: none;
+  font-family: "PT Serif";
+  font-weight: 510;
+  font-style: normal;
+  font-size: 17px;
+  color:#333333;
+}
+
+body{
+  background-color: #F5F1E1;
+}
 * {
   padding: 0;
   margin: 0;
@@ -44,16 +77,41 @@ li a{
 }
 
 li a:hover{
-  color:black;
+  color:white;
+  background-color:#A8D5BA;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  transition: all 0.3s;
 }
+
 
 li .login{
-  font-size: 16px;
-  font-weight: 500;
+  text-decoration: none;
+  font-family: "PT Serif";
+  font-weight: 510;
+  font-style: normal;
+  font-size: 17px;
+  color:#333333;;
 }
 
+.login:hover{
+  color:#FF6F61;
+  transition: all 0.2s;
+}
 header h2{
   margin-left: 1rem;
+  font-size: 30px;
+  color: #333333;
+}
+
+.taste{
+  color: #FF6F61;
+  font-size: 40px;
+}
+
+.buds{
+  color: #B5C68F;
+  font-size: 40px;
 }
 
 section{
@@ -71,15 +129,31 @@ section{
 
 .home .left h1{
   margin-bottom: 1rem;
+  font-size: 25;
 }
 
 .home button{
-  color: white;
+  color: #F5F1E1;
+  font-family: "PT Serif";
+  font-weight: 510;
+  font-size: 22px;
   border:none;
-  background-color: #213547;
-  width: 200px;
+  background-color: #A8D5BA;
+  height: 70px;
+  width: 240px;
   padding: 0.5rem;
-  border-radius: 0;
+  border-radius: 10px;
+}
+
+.home button:hover{
+  color: #F5F1E1;
+  background-color: #FF6F61;
+  transition: all 0.3s;
+}
+
+.home button:active{
+  transform: scale(0.9);
+  transition: all 0.3s;
 }
 
 .home a:hover{
@@ -95,6 +169,9 @@ section{
 .bg svg{
   position: absolute;
   bottom: 0;
+  left: 0;
+  right: 0;
+ width: max-content;
   z-index: -100;
 }
 
@@ -103,7 +180,8 @@ section{
   margin: auto;
   display: grid;
   gap:2.5rem;
-  grid-template-columns: repeat(auto-fit,13rem);
+  grid-template-columns: repeat(auto-fit,17rem);
+  grid-template-rows: repeat(auto-fit, 15rem);
   cursor:pointer
 }
 
@@ -111,57 +189,81 @@ section{
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   text-align: center;
   border-radius: 10px;
+  height: 15rem;
+  background-color: #B5C68F;
+}
+
+.card:hover{
+  transform: scale(1.2);
+  transition: all 0.3s;
 }
 
 .card-body{
   width: 100%;
-  background-color: #d4f6e8;
-  padding: 1rem;
+  padding: 0rem;
   border-radius:0 0 10px 10px;
-  margin: 0%;
+  margin: 0;
+  height: 32%;
+  background-color: #B5C68F   ;
 }
 
 .card-body .title{
-  margin-bottom:5px;
-  font-size: 15px;
-  font-weight:500;
+  color: #333333;
+  margin-bottom:0px;
+  font-size: 20px;
+  font-weight:bold;
+  color: #F5F1E1;
 }
 
 .card-body .icons{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 250px;
 }
 
 .card-body .timer{
   display: flex;
   align-items: center;
-  gap:2px;
-  font-size: 13px;
+  gap:5px;
+  font-size: 15px;
   font-weight: 500;
+  margin-left: 22px;
+  margin-right: 10px;
+  margin-top: 3px;
+  color: #F5F1E1;
+}
+
+.heart{
+  margin-right: 5px;
+  margin-top: 8px;
+  
 }
 
 .action{
   display: flex;
+  gap: 10px;
   font-size: 19px;
-  justify-content: space-between;
-  align-items: center;
-  width: 45px;
+  height: auto;
+  width: 60px;
+  color: #ffffff;
 }
 
 .editIcon{
-  color: black;
   font-size: 18px;
+  color: #F5F1E1;
+  margin-top: 5px;
 }
 
 .action a:hover{
-  color: black;
+  color: #FF8C64;
 }
 
 .deleteIcon{
-  color: rgb(239,53,53);
   font-size: 20px;
   cursor: pointer;
+  color: #FF8C64;
+  margin-top: 3px;
 }
 
 .modal{
@@ -173,6 +275,7 @@ section{
   border:none;
   left:30%;
   width: 40%;
+  background-color: #F5F1E1;
 }
 
 .backdrop{
@@ -191,6 +294,13 @@ section{
   text-align: center;
 }
 
+.form label{
+  font-family: "PT Serif";
+  font-weight: 510;
+  color: #FF6F61;
+  font-size: 17px;
+}
+
 .form-header{
   background-color: #d4f6e8;
   height: 3px;
@@ -202,38 +312,83 @@ section{
   justify-content: space-between;
   gap:1rem;
   margin-top: 1rem;
+  font-weight: 510;
+  color: #FF6F61;
+}
+
+.email{
+  font-family: "PT Serif";
+  font-weight: 510;
+  color: #FF6F61;
+}
+
+.password{
+  font-family: "PT Serif";
+  font-weight: 510;
+  color: #FF6F61;
 }
 
 .form-control .input{
   flex-basis: 70%;
-  border:1px solid rgb(156 163 175);
+  border:2px solid #FF6F61;
   border-radius: 4px;
-  height: 30px;
-  padding: 2px;
+  height: 33px;
+  padding: 2px; 
 }
 
+.input{
+  font-family: "PT Serif";
+  font-weight: 250;
+  color: #333333;
+}
+
+.input:hover{
+  border: 2px solid #B5C68F;
+  transition: all 0.3s;
+}
+
+
 .form-control .input-textarea{
-  border: 1px solid rgb(156 163 175);
+  border: 2px solid #FF6F61;
   border-radius: 4px;
   flex-basis: 70%;
   padding: 2px;
 }
 
 .form button{
+  color: #F5F1E1;
+  font-family: "PT Serif";
+  font-weight: 510;
+  border-radius: 10px;
+  padding: 9px 18px;
   margin:2rem 0;
   border:none;
-  background-color: #d4f6e8;
-  font-size: 14px;
+  background-color: #B5C68F;
+  font-size: 16px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
 }
 
+.form button:hover{
+  color: #F5F1E1;
+  background-color: #FF6F61;
+  transition: all 0.3s;
+}
+
+.form button:active{
+  transform: scale(0.9);
+  transition: all 0.3s;
+}
+
 .form p{
+  text-decoration: none;
   cursor: pointer;
   display: inline;
-  border-bottom: 1px solid #307bbd;
-  color:rga(4,136,170);
+  border-bottom: 1px solid #B5C68F;
   font-size: 14px;
-  color: #307bbd;
+  color: #B5C68F;
+  font-family: "PT Serif";
+  font-weight: 510;
+  font-size: 15px;
 }
 
 .form .error{
@@ -294,22 +449,21 @@ section{
 }
 
 .active{
-  color:black !important;
-  background-color: #d4f6e8;
+  color:white !important;
+  background-color: #FF6F61;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 .coverImage{
   width: 100%;
-  height: 120px;
+  height: 65%;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px 8px 0 0;
+  z-index: -100;
 }
 
-.bg-recipe-detail{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 
 .recipe-detail-container {
   position: fixed;
@@ -379,11 +533,13 @@ ul p label {
 }
 
 .bg-recipe-detail {
-  height: 100vh; /* Ensure the background takes up the full height */
+  display: flex;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-y: auto;
+  background-color: #F5F1E1;
 }
 
 .recipe-detail-container {

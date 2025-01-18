@@ -59,10 +59,10 @@ export default function RecipeItems() {
                                 <div className="title">{recipe.title}</div>
                                 <div className="icons">
                                     <div className="timer">
-                                        <FaClock size={15} /> {recipe.time}
+                                        <FaClock size={22} /> {recipe.time}
                                     </div>
                                     {!path ? (
-                                        <FaHeart
+                                        <FaHeart className='heart' size={22}
                                             onClick={(e) => {
                                                 e.preventDefault();
                                                 favRecipe(recipe);
@@ -72,8 +72,8 @@ export default function RecipeItems() {
                                                     (response) =>
                                                         response._id === recipe._id
                                                 )
-                                                    ? "red"
-                                                    : "",
+                                                    ? "#FF8C64"
+                                                    : "#F5F1E1",
                                             }}
                                         />
                                     ) : (
@@ -82,7 +82,7 @@ export default function RecipeItems() {
                                                 to={`/editRecipe/${recipe._id}`}
                                                 className="editIcon"
                                             >
-                                                <FaEdit size={18} />
+                                                <FaEdit size={23} />
                                             </Link>
                                             <AiFillDelete
                                                 onClick={(e) => {
@@ -90,7 +90,7 @@ export default function RecipeItems() {
                                                     onDelete(recipe._id);
                                                 }}
                                                 className="deleteIcon"
-                                                size={20}
+                                                size={27}
                                             />
                                         </div>
                                     )}

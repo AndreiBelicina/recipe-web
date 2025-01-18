@@ -29,16 +29,16 @@ export default function InputForm({setIsOpen}) {
     <>
         <form className='form' onSubmit = {handleOnSubmit}>
             <div className='form-control'>
-                <label>Email</label>
+                <label className='email'>Email</label>
                 <input type='email' className='input' placeholder='Enter email' onChange = {(e)=>setEmail(e.target.value)} required></input>
             </div>
             <div className='form-control'>
-                <label>Password</label>
+                <label className='password'>Password</label>
                 <input type='password' className='input' placeholder='Enter password' onChange = {(e)=>setPassword(e.target.value)} required></input>
             </div>
             <button type='submit'>{(isSignUp) ? "Sign Up":"Login"}</button> <br></br>
             { (error!= "") &&  <h6 className='error'>{error}</h6>}
-            <p onClick={()=> setIsSignUp(pre=>!pre)}>{(isSignUp) ? "Already have an account" : "Create new account"}</p>
+            <p className='account' onClick={()=> setIsSignUp(pre=>!pre)}>{(isSignUp) ? "Already have an account" : "Create new account"}</p>
         </form>
     </>
   )
