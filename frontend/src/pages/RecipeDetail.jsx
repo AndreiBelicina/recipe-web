@@ -22,6 +22,7 @@ export default function RecipeDetail() {
     return (
         <div className='bg-recipe-detail'>
             <div className="recipe-detail-container">
+                
                 {Object.keys(recipeData).length === 0 ? (
                     <p>Loading recipe details...</p>
                 ) : (
@@ -37,7 +38,7 @@ export default function RecipeDetail() {
                         <ul>
                             {recipeData.ingredients?.map((ingredient, index) => (
                                 <li key={index}>
-                                    <label>
+                                    <label className='ingridients'>
                                         {ingredient}
                                     </label>
                                 </li>
@@ -46,10 +47,12 @@ export default function RecipeDetail() {
                         <p><strong>Instructions:</strong></p>
                         <ol style={{ marginLeft: '20px' }} >
                             {recipeData.instruction?.map((instruction, index) => (
-                                <li key={index}>{instruction}</li>
+                                <li className='instruction' key={index}>{instruction}</li>
                             ))}
                         </ol>
+                        
                     </>
+                    
                 )}
             </div>
         </div>

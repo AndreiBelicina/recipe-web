@@ -37,7 +37,7 @@ export default function EditRecipe() {
         let val;
         if (e.target.name === "ingredients") {
             // Split ingredients into an array
-            val = e.target.value.split(",").map(item => item.trim());
+            val = e.target.value.split("\n").map(item => item.trim());
         } else if (e.target.name === "instruction") {
             // Split instructions into an array by newline
             val = e.target.value.split("\n").map(item => item.trim());
@@ -85,7 +85,7 @@ export default function EditRecipe() {
         <div className='container'>
             <form className='form' onSubmit={onHandleSubmit}>
                 <div className='form-control'>
-                    <label>Title</label>
+                    <label>Title:</label>
                     <input
                         type="text"
                         className='input'
@@ -96,7 +96,7 @@ export default function EditRecipe() {
                     />
                 </div>
                 <div className='form-control'>
-                    <label>Time</label>
+                    <label>Cooking Time:</label>
                     <input
                         type="text"
                         className='input'
@@ -107,19 +107,19 @@ export default function EditRecipe() {
                     />
                 </div>
                 <div className='form-control'>
-                    <label>Ingredients</label>
+                    <label>Ingredients:</label>
                     <textarea
                         className='input-textarea'
                         name="ingredients"
-                        rows="3"
+                        rows="5"
                         onChange={onHandleChange}
-                        value={recipeData.ingredients.join(", ")}
-                        placeholder="Enter ingredients separated by commas"
+                        value={recipeData.ingredients.join("\n")}
+                        placeholder="Enter each ingredient on a new line"
                         required
                     />
                 </div>
                 <div className='form-control'>
-                    <label>Instructions</label>
+                    <label>Instructions:</label>
                     <textarea
                         className='input-textarea'
                         name="instruction"
@@ -131,15 +131,15 @@ export default function EditRecipe() {
                     />
                 </div>
                 <div className='form-control'>
-                    <label>Recipe Image</label>
+                    <label>Recipe Image:</label>
                     <input
                         type="file"
-                        className='input'
+                        className='imageInput'
                         name="file"
                         onChange={onHandleChange}
                     />
                 </div>
-                <button type="submit">Edit Recipe</button>
+                <button type="submit">Update Recipe</button>
             </form>
         </div>
     );

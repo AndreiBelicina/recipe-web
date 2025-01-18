@@ -9,7 +9,7 @@ export default function AddFoodRecipe() {
     const onHandleChange = (e) => {
         let val;
         if (e.target.name === "ingredients") {
-            val = e.target.value.split(",").map(item => item.trim());
+            val = e.target.value.split("\n").map(item => item.trim());
         } else if (e.target.name === "instruction") {
             val = e.target.value.split("\n").map(item => item.trim());
         } else if (e.target.name === "file") {
@@ -54,27 +54,27 @@ export default function AddFoodRecipe() {
         <div className='container'>
             <form className='form' onSubmit={onHandleSubmit}>
                 <div className='form-control'>
-                    <label>Title</label>
+                    <label>Title:</label>
                     <input type="text" className='input' name="title" onChange={onHandleChange} required />
                 </div>
                 <div className='form-control'>
-                    <label>Time</label>
+                    <label>Cooking Time:</label>
                     <input type="text" className='input' name="time" onChange={onHandleChange} required />
                 </div>
                 <div className='form-control'>
-                    <label>Ingredients</label>
+                    <label>Ingredients:</label>
                     <textarea
                         className='input-textarea'
                         name="ingredients"
-                        rows="3"
+                        rows="5"
                         onChange={onHandleChange}
-                        value={recipeData.ingredients?.join(", ")}
-                        placeholder="Enter ingredients separated by commas"
+                        value={recipeData.ingredients?.join("\n")}
+                        placeholder="Enter each ingredient on a new line"
                         required
                     />
                 </div>
                 <div className='form-control'>
-                    <label>Instructions</label>
+                    <label>Instructions:</label>
                     <textarea
                         className='input-textarea'
                         name="instruction"
@@ -86,8 +86,8 @@ export default function AddFoodRecipe() {
                     />
                 </div>
                 <div className='form-control'>
-                    <label>Recipe Image</label>
-                    <input type="file" className='input' name="file" onChange={onHandleChange} required />
+                    <label>Recipe Image:</label>
+                    <input type="file" className='imageInput' name="file" onChange={onHandleChange} required />
                 </div>
                 <button type="submit">Add Recipe</button>
             </form>

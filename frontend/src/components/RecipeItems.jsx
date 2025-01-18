@@ -32,12 +32,12 @@ export default function RecipeItems() {
     const favRecipe = (recipe) => {
         let updatedFavRecipes;
         if (favorites.some(fav => fav._id === recipe._id)) {
-            updatedFavRecipes = favorites.filter(fav => fav._id !== recipe._id); // Remove from favorites
+            updatedFavRecipes = favorites.filter(fav => fav._id !== recipe._id);
         } else {
-            updatedFavRecipes = [...favorites, recipe]; // Add to favorites
+            updatedFavRecipes = [...favorites, recipe];
         }
         localStorage.setItem("fav", JSON.stringify(updatedFavRecipes));
-        setFavorites(updatedFavRecipes); // Update the local state to reflect changes immediately
+        setFavorites(updatedFavRecipes);
     };
 
     return (

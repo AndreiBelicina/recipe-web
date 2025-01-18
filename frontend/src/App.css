@@ -53,7 +53,7 @@ header {
   position: fixed;
   top:0;
   z-index: 10;
-  background-color: #ffffff;
+  background-color: #f6f0d8;
 }
 
 header ul{
@@ -122,9 +122,16 @@ section{
 
 .home{
   display: flex;
-  margin-top: 6rem;
-  gap:10rem;
+  margin-top: 3.5rem;
+  gap:3rem;
   position: relative;
+}
+
+.picture{
+  height: 680px;
+  width: 900px;
+  z-index: -auto;
+  margin-right: 0;
 }
 
 .home .left h1{
@@ -163,7 +170,9 @@ section{
 
 .home .left h5{
   margin:2rem 0;
-  
+  margin-top: 2rem;
+  font-size: 15px;
+  z-index: 100;
 }
 
 .bg svg{
@@ -172,7 +181,7 @@ section{
   left: 0;
   right: 0;
  width: max-content;
-  z-index: -100;
+  z-index:0;
 }
 
 .card-container{
@@ -208,11 +217,11 @@ section{
 }
 
 .card-body .title{
-  color: #333333;
   margin-bottom:0px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight:bold;
   color: #F5F1E1;
+  font-family: "PT Serif";
 }
 
 .card-body .icons{
@@ -232,6 +241,8 @@ section{
   margin-right: 10px;
   margin-top: 3px;
   color: #F5F1E1;
+  font-family: "PT Serif";
+  font-weight: 350px;
 }
 
 .heart{
@@ -328,19 +339,45 @@ section{
   color: #FF6F61;
 }
 
+.imageInput {
+  flex-basis: 70%;
+  border:2px solid #F5F1E1;
+  border-radius: 4px;
+  height: 33px;
+  padding: 2px; 
+  font-family: "PT Serif";
+  color: #333333;
+}
+
 .form-control .input{
   flex-basis: 70%;
   border:2px solid #FF6F61;
   border-radius: 4px;
   height: 33px;
   padding: 2px; 
+  font-family: "PT Serif";
+  text-indent: 7px;
+}
+
+.form-control .input:hover{
+  border: 2px solid #B5C68F;
+  transition: all 0.3s;
 }
 
 .input{
   font-family: "PT Serif";
-  font-weight: 250;
+  font-weight: 500;
   color: #333333;
+  font-size: 15px;
 }
+
+.input-textarea{
+  font-family: "PT Serif";
+  font-weight: 500;
+  color: #333333;
+  font-size: 15px;
+}
+
 
 .input:hover{
   border: 2px solid #B5C68F;
@@ -352,7 +389,14 @@ section{
   border: 2px solid #FF6F61;
   border-radius: 4px;
   flex-basis: 70%;
-  padding: 2px;
+  padding: 10px;
+  font-family: "PT Serif";
+}
+
+
+.form-control .input-textarea:hover{
+  border: 2px solid #B5C68F;
+  transition: all 0.3s;
 }
 
 .form button{
@@ -414,15 +458,22 @@ section{
 
 .footer{
   width:100vw;
-  height: 30px;
-  color: white;
-  background-color: #213547;
+  height: 35px;
+  color: #FF8C64;
+  background-color: #F5F1E1;
   position: fixed;
   bottom: 0;
   text-align: center;
   margin-top: 1rem;
   padding-top: 2px;
-  font-size: 14px;
+  font-size: 10px;
+  font-family: "PT Serif";
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.footer p{
+  font-family: "PT Serif";
+  transform: scaleX(1.5);
 }
 
 .outer-container{
@@ -463,47 +514,55 @@ section{
   z-index: -100;
 }
 
-
-
-.recipe-detail-container {
-  position: fixed;
-  top: 50px;
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-}
-
-.recipe-detail-container h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
 .recipe-detail-container h1{
   text-align: center;
+  margin-bottom: 15px;
+  font-size: 40px;
+  font-family: "PT Serif";
+  color: #FF8C64;
+}
+
+.ingridients{
+  font-family: "PT Serif";
+  line-height: 30px;
+  font-size: 18px;
+}
+
+.instruction{
+  font-family: "PT Serif";
+  text-indent: 4px;
+  line-height: 30px;
 }
 
 .recipe-image {
   width: 100%;
-  max-height: 400px;
+  max-height: 450px;
   object-fit: cover;
   margin-bottom: 20px;
   border-radius: 8px;
-  min-height: 300px;
+  min-height: 450px;
 }
 
 .recipe-detail-container p {
   margin-bottom: 15px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
+  font-family: "PT Serif";
+}
+
+.recipe-detail-container p strong{
+  font-size: 20px;
+  font-family: "PT Serif";
+  color: #FF8C64;
 }
 
 .recipe-detail-container ul {
-  list-style: disc;
+  list-style: square;
   margin: 10px 0 20px 20px;
+}
+
+li::marker{
+  color: #FF8C64;
 }
 
 .recipe-detail-container ul li {
@@ -512,7 +571,7 @@ section{
 
 ul {
   list-style: none;
-  padding: 0;
+  padding: 5px;
 }
 
 ul p {
@@ -520,34 +579,32 @@ ul p {
   margin: 5px 0;
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
-ul p input[type="checkbox"] {
-  transform: scale(1.2);
+  gap: 20px;
 }
 
 ul p label {
   font-size: 16px;
   cursor: pointer;
+  font-family: "PT Serif";
 }
 
 .bg-recipe-detail {
-  display: flex;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow-y: auto;
   background-color: #F5F1E1;
-}
+background-image: url('data:image/svg+xml,<svg id="visual" viewBox="0 0 960 540" width="960" height="540" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="960" height="540" fill="%23F5F1E1"></rect><path d="M0 255L7 269C14 283 28 311 41.8 299.7C55.7 288.3 69.3 237.7 83.2 201.2C97 164.7 111 142.3 125 140.3C139 138.3 153 156.7 167 200.8C181 245 195 315 208.8 346.7C222.7 378.3 236.3 371.7 250.2 371C264 370.3 278 375.7 292 377.3C306 379 320 377 334 345.7C348 314.3 362 253.7 375.8 242.2C389.7 230.7 403.3 268.3 417.2 266.3C431 264.3 445 222.7 459 197.5C473 172.3 487 163.7 501 163.7C515 163.7 529 172.3 542.8 210.7C556.7 249 570.3 317 584.2 307.8C598 298.7 612 212.3 626 175.2C640 138 654 150 668 165.2C682 180.3 696 198.7 709.8 220.8C723.7 243 737.3 269 751.2 289C765 309 779 323 793 304C807 285 821 233 835 217.3C849 201.7 863 222.3 876.8 213.3C890.7 204.3 904.3 165.7 918.2 152.3C932 139 946 151 953 157L960 163L960 541L953 541C946 541 932 541 918.2 541C904.3 541 890.7 541 876.8 541C863 541 849 541 835 541C821 541 807 541 793 541C779 541 765 541 751.2 541C737.3 541 723.7 541 709.8 541C696 541 682 541 668 541C654 541 640 541 626 541C612 541 598 541 584.2 541C570.3 541 556.7 541 542.8 541C529 541 515 541 501 541C487 541 473 541 459 541C445 541 431 541 417.2 541C403.3 541 389.7 541 375.8 541C362 541 348 541 334 541C320 541 306 541 292 541C278 541 264 541 250.2 541C236.3 541 222.7 541 208.8 541C195 541 181 541 167 541C153 541 139 541 125 541C111 541 97 541 83.2 541C69.3 541 55.7 541 41.8 541C28 541 14 541 7 541L0 541Z" fill="%23a8d5ba"></path><path d="M0 234L7 235.3C14 236.7 28 239.3 41.8 242.8C55.7 246.3 69.3 250.7 83.2 254.2C97 257.7 111 260.3 125 282.8C139 305.3 153 347.7 167 357.8C181 368 195 346 208.8 315.2C222.7 284.3 236.3 244.7 250.2 247.5C264 250.3 278 295.7 292 315.5C306 335.3 320 329.7 334 313.7C348 297.7 362 271.3 375.8 255.5C389.7 239.7 403.3 234.3 417.2 223.7C431 213 445 197 459 213.8C473 230.7 487 280.3 501 292.7C515 305 529 280 542.8 261.7C556.7 243.3 570.3 231.7 584.2 232.2C598 232.7 612 245.3 626 262.8C640 280.3 654 302.7 668 292C682 281.3 696 237.7 709.8 219C723.7 200.3 737.3 206.7 751.2 213.7C765 220.7 779 228.3 793 259.7C807 291 821 346 835 356.8C849 367.7 863 334.3 876.8 324.8C890.7 315.3 904.3 329.7 918.2 322.3C932 315 946 286 953 271.5L960 257L960 541L953 541C946 541 932 541 918.2 541C904.3 541 890.7 541 876.8 541C863 541 849 541 835 541C821 541 807 541 793 541C779 541 765 541 751.2 541C737.3 541 723.7 541 709.8 541C696 541 682 541 668 541C654 541 640 541 626 541C612 541 598 541 584.2 541C570.3 541 556.7 541 542.8 541C529 541 515 541 501 541C487 541 473 541 459 541C445 541 431 541 417.2 541C403.3 541 389.7 541 375.8 541C362 541 348 541 334 541C320 541 306 541 292 541C278 541 264 541 250.2 541C236.3 541 222.7 541 208.8 541C195 541 181 541 167 541C153 541 139 541 125 541C111 541 97 541 83.2 541C69.3 541 55.7 541 41.8 541C28 541 14 541 7 541L0 541Z" fill="%23afcc96"></path><path d="M0 444L7 437.7C14 431.3 28 418.7 41.8 387.5C55.7 356.3 69.3 306.7 83.2 311.2C97 315.7 111 374.3 125 387.8C139 401.3 153 369.7 167 360.3C181 351 195 364 208.8 356.3C222.7 348.7 236.3 320.3 250.2 303.7C264 287 278 282 292 275.8C306 269.7 320 262.3 334 290.2C348 318 362 381 375.8 393.2C389.7 405.3 403.3 366.7 417.2 369.2C431 371.7 445 415.3 459 430.2C473 445 487 431 501 422.2C515 413.3 529 409.7 542.8 417.7C556.7 425.7 570.3 445.3 584.2 429.5C598 413.7 612 362.3 626 347.7C640 333 654 355 668 373.2C682 391.3 696 405.7 709.8 393C723.7 380.3 737.3 340.7 751.2 319.5C765 298.3 779 295.7 793 295C807 294.3 821 295.7 835 318.3C849 341 863 385 876.8 393.3C890.7 401.7 904.3 374.3 918.2 373.3C932 372.3 946 397.7 953 410.3L960 423L960 541L953 541C946 541 932 541 918.2 541C904.3 541 890.7 541 876.8 541C863 541 849 541 835 541C821 541 807 541 793 541C779 541 765 541 751.2 541C737.3 541 723.7 541 709.8 541C696 541 682 541 668 541C654 541 640 541 626 541C612 541 598 541 584.2 541C570.3 541 556.7 541 542.8 541C529 541 515 541 501 541C487 541 473 541 459 541C445 541 431 541 417.2 541C403.3 541 389.7 541 375.8 541C362 541 348 541 334 541C320 541 306 541 292 541C278 541 264 541 250.2 541C236.3 541 222.7 541 208.8 541C195 541 181 541 167 541C153 541 139 541 125 541C111 541 97 541 83.2 541C69.3 541 55.7 541 41.8 541C28 541 14 541 7 541L0 541Z" fill="%23c6bd73"></path><path d="M0 402L7 409.7C14 417.3 28 432.7 41.8 442C55.7 451.3 69.3 454.7 83.2 442.2C97 429.7 111 401.3 125 382.2C139 363 153 353 167 364.8C181 376.7 195 410.3 208.8 409.8C222.7 409.3 236.3 374.7 250.2 377.2C264 379.7 278 419.3 292 433.2C306 447 320 435 334 414.7C348 394.3 362 365.7 375.8 355C389.7 344.3 403.3 351.7 417.2 357.8C431 364 445 369 459 370C473 371 487 368 501 376.7C515 385.3 529 405.7 542.8 427.7C556.7 449.7 570.3 473.3 584.2 485.2C598 497 612 497 626 474C640 451 654 405 668 405.5C682 406 696 453 709.8 458.2C723.7 463.3 737.3 426.7 751.2 408.5C765 390.3 779 390.7 793 395.5C807 400.3 821 409.7 835 419.7C849 429.7 863 440.3 876.8 430.7C890.7 421 904.3 391 918.2 392.8C932 394.7 946 428.3 953 445.2L960 462L960 541L953 541C946 541 932 541 918.2 541C904.3 541 890.7 541 876.8 541C863 541 849 541 835 541C821 541 807 541 793 541C779 541 765 541 751.2 541C737.3 541 723.7 541 709.8 541C696 541 682 541 668 541C654 541 640 541 626 541C612 541 598 541 584.2 541C570.3 541 556.7 541 542.8 541C529 541 515 541 501 541C487 541 473 541 459 541C445 541 431 541 417.2 541C403.3 541 389.7 541 375.8 541C362 541 348 541 334 541C320 541 306 541 292 541C278 541 264 541 250.2 541C236.3 541 222.7 541 208.8 541C195 541 181 541 167 541C153 541 139 541 125 541C111 541 97 541 83.2 541C69.3 541 55.7 541 41.8 541C28 541 14 541 7 541L0 541Z" fill="%23e3a85e"></path><path d="M0 487L7 489.3C14 491.7 28 496.3 41.8 481.7C55.7 467 69.3 433 83.2 425.2C97 417.3 111 435.7 125 453C139 470.3 153 486.7 167 500C181 513.3 195 523.7 208.8 507.7C222.7 491.7 236.3 449.3 250.2 442.3C264 435.3 278 463.7 292 479.7C306 495.7 320 499.3 334 492.2C348 485 362 467 375.8 464.5C389.7 462 403.3 475 417.2 480.7C431 486.3 445 484.7 459 473.5C473 462.3 487 441.7 501 432C515 422.3 529 423.7 542.8 434.5C556.7 445.3 570.3 465.7 584.2 467.3C598 469 612 452 626 439.3C640 426.7 654 418.3 668 433.2C682 448 696 486 709.8 505.2C723.7 524.3 737.3 524.7 751.2 510.8C765 497 779 469 793 452.5C807 436 821 431 835 436.7C849 442.3 863 458.7 876.8 466.5C890.7 474.3 904.3 473.7 918.2 479.3C932 485 946 497 953 503L960 509L960 541L953 541C946 541 932 541 918.2 541C904.3 541 890.7 541 876.8 541C863 541 849 541 835 541C821 541 807 541 793 541C779 541 765 541 751.2 541C737.3 541 723.7 541 709.8 541C696 541 682 541 668 541C654 541 640 541 626 541C612 541 598 541 584.2 541C570.3 541 556.7 541 542.8 541C529 541 515 541 501 541C487 541 473 541 459 541C445 541 431 541 417.2 541C403.3 541 389.7 541 375.8 541C362 541 348 541 334 541C320 541 306 541 292 541C278 541 264 541 250.2 541C236.3 541 222.7 541 208.8 541C195 541 181 541 167 541C153 541 139 541 125 541C111 541 97 541 83.2 541C69.3 541 55.7 541 41.8 541C28 541 14 541 7 541L0 541Z" fill="%23ff8c64"></path></svg>');
+  background-size:cover;
+  }
 
 .recipe-detail-container {
-  max-width: 900px; /* Optional: Set a max-width for the content */
+  max-width: 800px;
   padding: 20px;
-  margin: 20px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; /* Enable vertical scrolling inside this container */
-  max-height: 90vh; /* Limit the height to prevent full page overflow */
+  margin-top: 40px;
+  background-color: #F5F1E1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+  max-height: 90vh;
 }
