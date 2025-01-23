@@ -128,10 +128,9 @@ section{
 }
 
 .picture{
-  height: 680px;
+  height: 645px;
   width: 900px;
   z-index: -auto;
-  margin-right: 0;
 }
 
 .home .left h1{

@@ -17,7 +17,7 @@ export default function EditRecipe() {
     useEffect(() => {
         const getData = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/recipe/${id}`);
+                const response = await axios.get(`/recipe/${id}`);
                 const responsed = response.data;
                 setRecipeData({
                     title: responsed.title || '',
@@ -68,7 +68,7 @@ export default function EditRecipe() {
         }
 
         try {
-            const response = await axios.put(`http://localhost:4000/recipe/${id}`, formData, {
+            const response = await axios.put(`/recipe/${id}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'authorization': 'Bearer ' + localStorage.getItem("token"),

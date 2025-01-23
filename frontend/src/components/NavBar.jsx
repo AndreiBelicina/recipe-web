@@ -32,7 +32,7 @@ export default function NavBar() {
     return (
         <>
             <header>
-            <h2> < LuCookingPot size={33} color='#666666'/> <span className='taste'>Taste</span> <span className='buds'>Buds</span> <GiForkKnifeSpoon size = {30} color='#666666'/> </h2>
+            <h2> < LuCookingPot size={33} color='#666666'/> <span className='taste'>Taste</span> <span className='buds'>Buds</span> <GiForkKnifeSpoon size = {32} color='#888888'/> </h2>
             <ul>
                 <li><NavLink className={'homeNav'} to = "/">Home</NavLink></li>
                 <li onClick = {() => isLogin && setIsOpen(true)}><NavLink className={'recipeNav'} to ={ !isLogin ? "/myRecipe" : "/" }>My Recipe</NavLink></li>

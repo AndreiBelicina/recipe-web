@@ -37,7 +37,7 @@ export default function AddFoodRecipe() {
         }
 
         try {
-            const response = await axios.post("http://localhost:4000/recipe", formData, {
+            const response = await axios.post("/recipe", formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'authorization': 'Bearer ' + localStorage.getItem("token"),

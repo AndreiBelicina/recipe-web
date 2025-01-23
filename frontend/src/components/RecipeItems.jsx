@@ -22,7 +22,7 @@ export default function RecipeItems() {
     }, [recipes]);
 
     const onDelete = async (id) => {
-        await axios.delete(`http://localhost:4000/recipe/${id}`);
+        await axios.delete(`/recipe/${id}`);
         setAllRecipes(recipes => recipes.filter(recipe => recipe._id !== id));
         let filterItem = favorites.filter(recipe => recipe._id !== id);
         localStorage.setItem("fav", JSON.stringify(filterItem));
@@ -52,7 +52,7 @@ export default function RecipeItems() {
                         <div className="card">
                             <img
                                 className="coverImage"
-                                src={`http://localhost:4000/images/${recipe.coverImage}`}
+                                src={`${import.meta.env.VITE_URL_API}/images/${recipe.coverImage}`}
                                 alt={recipe.title}
                             />
                             <div className="card-body">

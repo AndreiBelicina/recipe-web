@@ -8,11 +8,11 @@ import AddFoodRecipe from './pages/AddFoodRecipe'
 import EditRecipe from './pages/EditRecipe'
 import RecipeDetail from './pages/RecipeDetail';
 
-axios.defaults.baseURL = 'http://localhost:4000'; 
+axios.defaults.baseURL = import.meta.env.VITE_URL_API; 
 
 const getAllRecipes = async () => {
   let allRecipes = []
-  await axios.get('http://localhost:4000/recipe').then(response=>{
+  await axios.get('/recipe').then(response=>{
     allRecipes = response.data
   })
   return allRecipes

@@ -9,7 +9,7 @@ export default function RecipeDetail() {
     useEffect(() => {
         const getData = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/recipe/${id}`);
+                const response = await axios.get(`/recipe/${id}`);
                 const fetchedRecipe = response.data;
                 setRecipeData(fetchedRecipe);
             } catch (error) {
@@ -29,7 +29,7 @@ export default function RecipeDetail() {
                     <>
                         <h1>{recipeData.title}</h1>
                         <img
-                            src={`http://localhost:4000/images/${recipeData.coverImage}`}
+                            src={`${import.meta.env.VITE_URL_API}/images/${recipeData.coverImage}`}
                             alt={recipeData.title}
                             className="recipe-image"
                         />
