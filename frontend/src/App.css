@@ -546,7 +546,9 @@ section{
   margin-bottom: 15px;
   font-size: 18px;
   line-height: 1.6;
+  color: #FF6F61;
   font-family: "PT Serif";
+  border-radius: 15px;
 }
 
 .recipe-detail-container p strong{
