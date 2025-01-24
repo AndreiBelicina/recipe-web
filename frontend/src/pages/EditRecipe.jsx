@@ -13,7 +13,7 @@ export default function EditRecipe() {
     const navigate = useNavigate();
     const { id } = useParams();
 
-    // Fetch existing recipe data
+
     useEffect(() => {
         const getData = async () => {
             try {
@@ -24,7 +24,7 @@ export default function EditRecipe() {
                     ingredients: responsed.ingredients || [],
                     instruction: responsed.instruction || [],
                     time: responsed.time || '',
-                    file: null, // Reset file field for editing
+                    file: null,
                 });
             } catch (error) {
                 console.error("Error fetching recipe:", error);
@@ -36,11 +36,11 @@ export default function EditRecipe() {
     const onHandleChange = (e) => {
         let val;
         if (e.target.name === "ingredients") {
-            // Split ingredients into an array
-            val = e.target.value.split("\n").map(item => item.trim());
+
+            val = e.target.value.split("\n").map(item => item);
         } else if (e.target.name === "instruction") {
-            // Split instructions into an array by newline
-            val = e.target.value.split("\n").map(item => item.trim());
+
+            val = e.target.value.split("\n").map(item => item);
         } else if (e.target.name === "file") {
             val = e.target.files[0];
         } else {
@@ -56,7 +56,6 @@ export default function EditRecipe() {
         const formData = new FormData();
         for (const key in recipeData) {
             if (Array.isArray(recipeData[key])) {
-                // Append array items separately
                 recipeData[key].forEach((item, index) => {
                     formData.append(`${key}[${index}]`, item);
                 });

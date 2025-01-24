@@ -9,9 +9,9 @@ export default function AddFoodRecipe() {
     const onHandleChange = (e) => {
         let val;
         if (e.target.name === "ingredients") {
-            val = e.target.value.split("\n").map(item => item.trim());
+            val = e.target.value.split("\n").map(item => item);
         } else if (e.target.name === "instruction") {
-            val = e.target.value.split("\n").map(item => item.trim());
+            val = e.target.value.split("\n").map(item => item);
         } else if (e.target.name === "file") {
             val = e.target.files[0];
         } else {
@@ -27,7 +27,7 @@ export default function AddFoodRecipe() {
         const formData = new FormData();
         for (const key in recipeData) {
             if (Array.isArray(recipeData[key])) {
-                // Append array items separately
+
                 recipeData[key].forEach((item, index) => {
                     formData.append(`${key}[${index}]`, item);
                 });
